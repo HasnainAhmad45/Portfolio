@@ -1,12 +1,8 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
-import { useRef } from "react";
-import { Container, Typography, TextField, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useRef } from "react";
+import { Container, Typography, TextField} from "@mui/material"; // updated
+import { makeStyles } from "@mui/styles"; // updated
 import Swal from 'sweetalert2';
-
 import emailjs from '@emailjs/browser';
-
 import './Contact.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -31,7 +27,7 @@ export const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_8bezxog', 'template_jmsk313', form.current, 'knwNTK4YU4K30HYMd')
+    emailjs.sendForm('service_7j0x1nu', 'template_5t5ijjp', form.current, 'Q8AEn5yTXvHvPogIu')
       .then((result) => {
           console.log(result.text);
       }, (error) => {

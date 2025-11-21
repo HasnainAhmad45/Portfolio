@@ -20,7 +20,7 @@
       {
         "network": "GitHub",
         "username": "yourusername",
-        "url": "https://github.com/yourusername",
+        "url": "https://github.com/HasnainAhmad45",
         "x_icon": "fab fa-github"
       },
       {
@@ -30,16 +30,16 @@
         "x_icon": "fab fa-linkedin"
       },
       {
-        "network": "Twitter",
+        "network": "Facebook",
         "username": "yourusername",
-        "url": "https://twitter.com/yourusername",
-        "x_icon": "fab fa-twitter"
+        "url": "https://www.facebook.com/profile.php?id=100090556634789",
+        "x_icon": "fab fa-facebook"
       },
       {
-        "network": "Email",
+        "network": "Instagram",
         "username": "hasnainirshad44@gmail.com",
-        "url": "mailto:hasnainirshad44@gmail.com",
-        "x_icon": "fas fa-envelope"
+        "url": "https://www.instagram.com/about_hasnain/",
+        "x_icon": "fab fa-instagram"
       }
     ]
   },

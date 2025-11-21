@@ -1,42 +1,42 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Content } from '../components/content/Content';
+import { Box } from '@mui/material';
 import DisplacementSphere from '../components/background/DisplacementSphere';
 import { ThemeToggle } from '../components/theme/ThemeToggle';
 import { SocialButton } from '../components/content/SocialButton';
 import { SideNavbar } from '../components/nav/SideNavbar';
 import { About } from '../components/about/About';
-const useStyles = makeStyles(() => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-  },
-  headerButtons: {
-    position: 'fixed',
-    top: '1.5rem',
-    right: '2rem',
-    zIndex: 101,
-    display: 'flex',
-    gap: '1rem',
-    alignItems: 'center',
-  },
-}));
+import { Content } from '../components/content/Content';
 
 export const Home = () => {
-  const classes = useStyles();
-
   return (
     <>
-      <div className={classes.root} id="home">
+      <Box
+        id="home"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'relative',
+        }}
+      >
         <DisplacementSphere />
         <SideNavbar />
         <Content />
-        <div className={classes.headerButtons}>
+        <Box
+          sx={{
+            position: 'fixed',
+            top: { xs: '0.75rem', sm: '1rem', md: '1.5rem' },
+            right: { xs: '0.75rem', sm: '1rem', md: '2rem' },
+            zIndex: 101,
+            display: 'flex',
+            gap: { xs: 0.5, sm: 0.75, md: 1 },
+            alignItems: 'center',
+            flexDirection: { xs: 'column', sm: 'row' },
+          }}
+        >
           <ThemeToggle />
           <SocialButton />
-        </div>
-      </div>
+        </Box>
+      </Box>
       <About />
     </>
   );

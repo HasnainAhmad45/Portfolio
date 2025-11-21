@@ -1,96 +1,104 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
-import { useState } from "react";
-import { Container, Button, Chip } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useState } from "react";
+import { Container, Button, Chip } from "@mui/material";
+import { styled } from '@mui/material/styles';
 import { TextDecrypt } from "../content/TextDecrypt";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LaunchIcon from "@material-ui/icons/Launch";
-
+import LaunchIcon from '@mui/icons-material/Launch';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import "./Works.css";
+// Import project images
+import Portfolio from '../../assets/recentprojects/react-portfolio.png';
+import Startup from '../../assets/recentprojects/startup.png';
+import { useTheme } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 
-// Import your project images
-import Portfolio from "../../assets/recentprojects/react-portfolio.png";
-import Veritru from "../../assets/recentprojects/veritru.png";
-import Lofo from "../../assets/recentprojects/lofo.png";
-import Startup from "../../assets/recentprojects/startup.png";
-import Lacalle from "../../assets/recentprojects/lacalle.png";
-
-const useStyles = makeStyles((theme) => ({
-  main: {
-    maxWidth: "100vw",
-    marginTop: "4em",
-    marginBottom: "auto",
-    padding: theme.spacing(4, 2),
-  },
-  sectionHeader: {
-    textAlign: "center",
-    marginBottom: theme.spacing(6),
-  },
-  sectionTitle: {
-    fontSize: "2.5rem",
-    fontWeight: "600",
-    marginBottom: theme.spacing(2),
-    color: "#2c3e50",
-  },
-  sectionSubtitle: {
-    fontSize: "1.1rem",
-    color: "#666",
-    maxWidth: "600px",
-    margin: "0 auto",
-  },
-  filters: {
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    gap: theme.spacing(1),
-    marginBottom: theme.spacing(4),
-  },
-  filterChip: {
-    borderRadius: "6px",
-    fontWeight: "500",
-    transition: "all 0.2s ease",
-    border: "1px solid #e0e0e0",
-    "&.MuiChip-clickable:hover": {
-      backgroundColor: "#f5f5f5",
-    },
-  },
-  filterChipActive: {
-    backgroundColor: "#575757",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#575757",
-    },
-  },
-  button: {
-    margin: theme.spacing(0.5),
-    borderRadius: "6px",
-    fontWeight: "500",
-    textTransform: "none",
-    fontSize: "0.9rem",
-    transition: "all 0.2s ease",
-  },
-  liveDemo: {
-    backgroundColor: "#575757",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#ec704c",
-    },
-  },
-  github: {
-    backgroundColor: "transparent",
-    color: "#575757",
-    border: "1px solid #e0e0e0",
-    "&:hover": {
-      backgroundColor: "#f5f5f5",
-      borderColor: "#575757",
-    },
-  },
+const MainSection = styled(Container)(({ theme }) => ({
+  maxWidth: '100vw',
+  marginTop: '1em',
+  marginBottom: 'auto',
+  padding: theme.spacing(4, 2),
+}));
+const SectionHeader = styled('div')({
+  textAlign: 'center',
+});
+const SectionTitle = styled('h1')(({ theme }) => ({
+  fontSize: '2.5rem',
+  fontWeight: 600,
+  marginBottom: theme.spacing(5),
+  color: '#2c3e50',
+}));
+const SectionSubtitle = styled('p')(({ theme }) => ({
+  fontSize: '1.1rem',
+  color: '#666',
+  maxWidth: 600,
+  margin: '0 auto',
+  marginBottom: theme.spacing(5),
+}));
+const Filters = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+  gap: theme.spacing(1),
+  marginBottom: theme.spacing(4),
+}));
+const ButtonStyled = styled(Button)(({ theme }) => ({
+  borderRadius: 6,
+  fontWeight: 500,
+  textTransform: 'none',
+  fontSize: '0.9rem',
+  transition: 'all 0.2s ease',
+  margin: theme.spacing(0.5),
+}));
+const LiveDemo = styled(ButtonStyled)(({ theme }) => ({
+  backgroundColor: '#575757',
+  color: 'white',
+  '&:hover': { backgroundColor: '#ec704c' },
+}));
+const GithubButton = styled(ButtonStyled)(({ theme }) => ({
+  backgroundColor: 'transparent',
+  color: '#575757',
+  border: '1px solid #e0e0e0',
+  '&:hover': { backgroundColor: '#f5f5f5', borderColor: '#575757' },
 }));
 
 export const Works = () => {
-  const classes = useStyles();
   const [activeFilter, setActiveFilter] = useState("all");
+  const theme = useTheme();
+  const isDark = theme.palette.mode === 'dark';
+
+  // theme-aware styles for grid items
+  const cardDarkBg = alpha(theme.palette.background.paper, 0.85) || '#22272e';
+  const cardLightBg = '#fbfbfd';
+  const projectCardStyle = {
+    background: isDark ? cardDarkBg : cardLightBg,
+    color: isDark ? alpha(theme.palette.text.primary, 0.88) : '#23272e',
+    border: `1px solid ${isDark ? alpha(theme.palette.divider, 0.12) : '#e0e0e0'}`,
+    boxShadow: isDark
+      ? '0 2px 10px rgba(20,20,20,0.32)'
+      : '0 2px 8px rgba(0,0,0,0.08)',
+    transition: 'all 0.3s ease',
+    borderRadius: 8,
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+  };
+  const projectTitleStyle = {
+    color: isDark ? alpha(theme.palette.text.primary, 0.96) : '#1b222a',
+  };
+  const projectSubtitleStyle = {
+    color: isDark ? alpha(theme.palette.text.secondary, 0.85) : '#666',
+  };
+  const techTagStyle = {
+    background: isDark ? '#273043' : '#f4f5f7',
+    color: isDark ? alpha('#fff', 0.92) : '#575757',
+    border: `1px solid ${isDark ? 'rgba(255,255,255,0.13)' : '#e9ecef'}`,
+    fontWeight: 500,
+    borderRadius: 4,
+    padding: '4px 12px',
+    fontSize: '0.8rem',
+    display: 'inline-block',
+    transition: 'background 0.3s, color 0.3s',
+  };
 
   const projectCategories = [
     { key: "all", label: "All Projects" },
@@ -100,7 +108,7 @@ export const Works = () => {
     { key: "ai", label: "AI/ML Projects" },
   ];
 
-  const [projects, setProjects] = useState([
+  const [projects] = useState([
     {
       id: 1,
       title: "Modern Blogging Platform",
@@ -448,73 +456,75 @@ export const Works = () => {
 
   return (
     <section id="works">
-      <Container component="main" className={classes.main} maxWidth="lg">
-        <div className={classes.sectionHeader}>
-          <h1 className={classes.sectionTitle}>
-            <TextDecrypt text="PROJECTS" />
-          </h1>
-          <p className={classes.sectionSubtitle}>
+      <MainSection component="main" maxWidth="lg">
+        <SectionHeader>
+          <SectionTitle>{<TextDecrypt text="PROJECTS" />}</SectionTitle>
+          <SectionSubtitle sx={projectSubtitleStyle}>
             A collection of my academic, professional, and personal projects
-          </p>
-        </div>
-
-        {/* Project Filters */}
-        <div className={classes.filters}>
+          </SectionSubtitle>
+        </SectionHeader>
+        <Filters>
           {projectCategories.map((category) => (
             <Chip
               key={category.key}
               label={category.label}
               clickable
-              className={`${classes.filterChip} ${
-                activeFilter === category.key ? classes.filterChipActive : ""
-              }`}
+              sx={{
+                borderRadius: '6px',
+                fontWeight: 500,
+                border: `1px solid ${isDark ? theme.palette.divider : '#e0e0e0'}`,
+                backgroundColor:
+                  activeFilter === category.key
+                    ? (isDark ? theme.palette.primary.main : '#575757')
+                    : 'inherit',
+                color:
+                  activeFilter === category.key
+                    ? (isDark ? '#fff' : 'white')
+                    : (isDark ? theme.palette.text.primary : 'inherit'),
+                '&:hover': {
+                  backgroundColor:
+                    activeFilter === category.key
+                      ? (isDark ? theme.palette.primary.dark : '#575757')
+                      : (isDark ? theme.palette.action.hover : '#f5f5f5'),
+                },
+                transition: 'all 0.2s ease',
+              }}
               onClick={() => setActiveFilter(category.key)}
             />
           ))}
-        </div>
-
+        </Filters>
         <div className="projects-grid">
           {filteredProjects.map((project) => (
-            <div className="project-card" key={project.id}>
+            <div className="project-card" key={project.id} style={projectCardStyle}>
               <div className="project-image__wrapper">
                 <img src={project.image} alt={project.alter} />
               </div>
-
               <div className="project-content__wrapper">
-                <div className="project-category">
-                  {
-                    projectCategories.find(
-                      (cat) => cat.key === project.category
-                    )?.label
-                  }
+                <div className="project-category" style={{color: theme.palette.primary.main}}>
+                  {projectCategories.find((cat) => cat.key === project.category)?.label}
                 </div>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-
+                <h3 className="project-title" style={projectTitleStyle}>{project.title}</h3>
+                <p className="project-description" style={projectSubtitleStyle}>{project.description}</p>
                 <div className="project-technologies">
                   {project.technologies.map((tech, index) => (
-                    <span key={index} className="tech-tag">
+                    <span key={index} className="tech-tag" style={techTagStyle}>
                       {tech}
                     </span>
                   ))}
                 </div>
-
                 <div className="project-links">
-                  <Button
-                    className={`${classes.button} ${classes.liveDemo}`}
+                  <LiveDemo
                     startIcon={<LaunchIcon />}
                     href={project.liveUrl}
                     target="_blank"
                     variant="contained"
                     size="small"
                   >
-                    {project.category === "ai" ||
-                    project.category === "database"
-                      ? "View Demo"
-                      : "Live Demo"}
-                  </Button>
-                  <Button
-                    className={`${classes.button} ${classes.github}`}
+                    {project.category === 'ai' || project.category === 'database'
+                      ? 'View Demo'
+                      : 'Live Demo'}
+                  </LiveDemo>
+                  <GithubButton
                     startIcon={<GitHubIcon />}
                     href={project.githubUrl}
                     target="_blank"
@@ -522,13 +532,13 @@ export const Works = () => {
                     size="small"
                   >
                     GitHub
-                  </Button>
+                  </GithubButton>
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </Container>
+      </MainSection>
     </section>
   );
 };

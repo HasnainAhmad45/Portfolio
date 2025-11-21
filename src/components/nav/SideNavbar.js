@@ -1,149 +1,127 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
-import { Typography, Hidden } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
-import DescriptionIcon from "@material-ui/icons/Description";
+import { Typography, IconButton } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import DescriptionIcon from "@mui/icons-material/Description";
 import { useLocation, Link } from "react-router-dom";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import "./SideNavbar.css";
 
 export const SideNavbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isDark = theme.palette.mode === 'dark';
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
+  const navLinks = [
+    { label: 'Home', to: '/' },
+    { label: 'Projects', to: '/projects' },
+    { label: 'Contact', to: '/contact' },
+  ];
 
   return (
     <>
       <nav className="navbar">
         <div className="nav-container">
-          {/* Hamburger menu - only visible on small screens */}
-          <Hidden mdUp>
+          {/* Mobile Hamburger */}
+          {isMobile && (
             <div className="mobile-nav-header">
-              <button
-                className="hamburger-btn"
-                onClick={toggleMenu}
-                aria-label="Open navigation menu"
+              <IconButton onClick={toggleMenu} aria-label="Open navigation menu"
+                sx={{
+                  height: { xs: '2rem', sm: '2.2rem', md: '2.5rem' },
+                  width: { xs: '2rem', sm: '2.2rem', md: '2.5rem' },
+                  padding: { xs: '0.3rem', sm: '0.4rem', md: '0.5rem' },
+                }}
               >
-                <MenuIcon />
-              </button>
+                <MenuIcon
+                  sx={{ fontSize: { xs: '2rem', sm: '2.2rem', md: '2.5rem' } }}
+                />
+              </IconButton>
             </div>
-          </Hidden>
+          )}
 
-          {/* Desktop navigation - only visible on medium screens and up */}
-          <Hidden smDown>
+          {/* Desktop Links */}
+          {!isMobile && (
             <div className="desktop-nav-links">
-              <Link
-                to="/"
-                className={
-                  location.pathname === "/" ? "nav-link active" : "nav-link"
-                }
-              >
-                <Typography>Home</Typography>
-              </Link>
-              <Link
-                to="/projects"
-                className={
-                  location.pathname === "/projects"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                <Typography>Projects</Typography>
-              </Link>
-              <Link
-                to="/contact"
-                className={
-                  location.pathname === "/contact"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                <Typography>Contact</Typography>
-              </Link>
+              {navLinks.map(link => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={location.pathname === link.to ? "nav-link active" : "nav-link"}
+                >
+                  <Typography>{link.label}</Typography>
+                </Link>
+              ))}
               <a
                 href="/resume"
-                target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link"
               >
-                <DescriptionIcon
-                  style={{ marginRight: "8px", fontSize: "20px" }}
-                />
+                <DescriptionIcon sx={{ mr: 1, fontSize: 20 }} />
                 <Typography>Resume</Typography>
               </a>
             </div>
-          </Hidden>
+          )}
         </div>
       </nav>
 
-      {/* Overlay and mobile drawer */}
-      {isOpen && (
+      {/* Mobile Drawer */}
+      {isOpen && isMobile && (
         <>
           <div className="overlay" onClick={closeMenu}></div>
-          <div className={`side-drawer ${isOpen ? "side-drawer-open" : ""}`}>
-            <div className="drawer-header">
-              <button
-                className="close-btn"
-                onClick={closeMenu}
-                aria-label="Close navigation menu"
+          <div
+            className={`side-drawer ${isOpen ? "side-drawer-open" : ""}`}
+            style={{
+              background: isDark ? theme.palette.background.paper : '#fff',
+              color: isDark ? theme.palette.text.primary : '#575757',
+            }}
+          >
+            <div
+              className="drawer-header"
+              style={{
+                background: isDark ? theme.palette.background.default : '#f8f9fa',
+                color: isDark ? theme.palette.text.primary : '#575757',
+                borderBottom: `1px solid ${isDark ? theme.palette.divider : '#e0e0e0'}`,
+              }}
+            >
+              <IconButton onClick={closeMenu} aria-label="Close navigation menu"
+                sx={{ color: isDark ? theme.palette.text.primary : '#575757' }}
               >
                 <CloseIcon />
-              </button>
+              </IconButton>
             </div>
-
             <div className="drawer-links">
-              <Link
-                to="/"
-                className={
-                  location.pathname === "/"
-                    ? "drawer-link active"
-                    : "drawer-link"
-                }
-                onClick={closeMenu}
-              >
-                <Typography>Home</Typography>
-              </Link>
-              <Link
-                to="/projects"
-                className={
-                  location.pathname === "/projects"
-                    ? "drawer-link active"
-                    : "drawer-link"
-                }
-                onClick={closeMenu}
-              >
-                <Typography>Projects</Typography>
-              </Link>
-              <Link
-                to="/contact"
-                className={
-                  location.pathname === "/contact"
-                    ? "drawer-link active"
-                    : "drawer-link"
-                }
-                onClick={closeMenu}
-              >
-                <Typography>Contact</Typography>
-              </Link>
+              {navLinks.map(link => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={location.pathname === link.to ? "drawer-link active" : "drawer-link"}
+                  onClick={closeMenu}
+                  style={{
+                    color: isDark ? theme.palette.text.primary : '#575757',
+                    borderLeft: location.pathname === link.to && isDark ? `3px solid ${theme.palette.primary.main}` : '',
+                  }}
+                >
+                  <Typography fontWeight={600}>{link.label}</Typography>
+                </Link>
+              ))}
               <a
                 href="/resume"
-                target="_blank"
                 rel="noopener noreferrer"
                 className="drawer-link"
                 onClick={closeMenu}
+                style={{ color: isDark ? theme.palette.text.primary : '#575757' }}
               >
-                <DescriptionIcon
-                  style={{ marginRight: "8px", fontSize: "20px" }}
-                />
-                <Typography>Resume</Typography>
+                <DescriptionIcon sx={{ mr: 1, fontSize: 20 }} />
+                <Typography fontWeight={600}>Resume</Typography>
               </a>
             </div>
           </div>

@@ -1,24 +1,26 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
-import { Container, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Container, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { TextDecrypt } from "../content/TextDecrypt";
 import { FirstName, LastName } from "../../utils/getName";
-
 import './About.css';
 
 import profile from '../../assets/profile.png';
 
-const useStyles = makeStyles((theme) => ({
-  main: {
-    maxWidth: '100vw',
-    marginTop: '3em',
-    marginBottom: "auto",
+const MainContainer = styled(Container)(({ theme }) => ({
+  maxWidth: '100vw !important',
+  paddingLeft: '0 !important',
+  marginTop: theme.spacing(4),
+  marginBottom: "auto",
+  [theme.breakpoints.down('sm')]: {
+    marginTop: theme.spacing(3),
+  },
+  [theme.breakpoints.down('xs')]: {
+    marginTop: theme.spacing(2),
   },
 }));
 
 export const About = () => {
-  const classes = useStyles();
   const greetings = "Hello there!";
   const aboutme = `I'm ${FirstName} ${LastName}, a multidisciplinary 
                   designer & developer. I'm always down for something new and challenging!
@@ -27,14 +29,12 @@ export const About = () => {
 
   return (
     <section id="about">
-      <Container component="main" className={classes.main} maxWidth="md">
+      <MainContainer component="main" maxWidth={false}>
         <div className="about">
-          <div className="_img"
+          <div 
+            className="_img"
             style={{ 
-              background: "url(" + profile + ")",
-              backgroundSize: 'contain',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
+              backgroundImage: `url(${profile})`,
             }}
           >
           </div>
@@ -51,7 +51,7 @@ export const About = () => {
             </a>
           </div>
         </div>
-      </Container>
+      </MainContainer>
     </section>
   );
 };

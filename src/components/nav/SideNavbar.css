@@ -52,7 +52,7 @@
 }
 
 .hamburger-btn svg {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .mobile-nav-title {
@@ -82,7 +82,7 @@
   color: #575757;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   transition: all 0.3s ease;
-  padding: 0.5rem 0.75rem;
+  padding: 0.3rem 0.3rem;
   border-radius: 4px;
   position: relative;
   white-space: nowrap;

@@ -1,0 +1,114 @@
+.contact {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  margin: 110px auto 2rem auto;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+._form_wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.51);
+  width: 100%;
+  max-width: clamp(28rem, 50vw, 44rem);
+  min-height: 28rem;
+  padding: 2rem;
+}
+
+.submit-btn {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #ffff;
+  background-color: #0a0a0a;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.submit-btn:hover {
+  margin-right: 20px;
+  text-decoration: none;
+  background-color: #ec704c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(236, 112, 76, 0.3);
+}
+
+.contact_msg {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: clamp(1rem, 3vw, 5rem);
+  text-align: center;
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .contact {
+    width: 85%;
+    margin-top: 100px;
+  }
+  ._form_wrapper {
+    max-width: 26rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    width: 80%;
+    margin-top: 90px;
+    padding: 1.5rem;
+  }
+  ._form_wrapper {
+    max-width: 24rem;
+    padding: 1.5rem;
+  }
+  .contact_msg {
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    width: 90%;
+    margin: 80px auto 2rem auto;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  ._form_wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  .contact_msg {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    width: 95%;
+    margin: 70px auto 1rem auto;
+    padding: 0.5rem;
+  }
+  ._form_wrapper {
+    padding: 1rem;
+    min-height: auto;
+  }
+  .submit-btn {
+    width: 100%;
+    margin-right: 0;
+    padding: 1rem;
+  }
+  .contact_msg {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+}

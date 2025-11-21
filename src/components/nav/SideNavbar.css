@@ -1,0 +1,227 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: inherit;
+  backdrop-filter: blur(10px);
+  z-index: 100; /* Reduced from 1000 to 100 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ... rest of your SideNavbar.css remains the same ... */
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Mobile header styles */
+.mobile-nav-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: #575757;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.hamburger-btn:hover {
+  color: #ec704c;
+  background: rgba(236, 112, 76, 0.1);
+}
+
+.hamburger-btn svg {
+  font-size: 1.5rem;
+}
+
+.mobile-nav-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mobile-nav-title h6 {
+  color: #575757;
+  font-weight: 500;
+  margin: 0;
+}
+
+.desktop-nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.nav-link {
+  margin: 0 clamp(0.5rem, 2vw, 1.25rem);
+  text-decoration: none;
+  color: #575757;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ec704c;
+  background: rgba(236, 112, 76, 0.1);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ec704c;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.side-drawer-open {
+  left: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 60px;
+  background: #f8f9fa;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #575757;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #ec704c;
+  background: rgba(236, 112, 76, 0.1);
+}
+
+.close-btn svg {
+  font-size: 1.5rem;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #575757;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.drawer-link:hover {
+  background: rgba(236, 112, 76, 0.1);
+  color: #ec704c;
+}
+
+.drawer-link.active {
+  background: rgba(236, 112, 76, 0.1);
+  color: #ec704c;
+  border-left: 3px solid #ec704c;
+}
+
+/* Prevent body scroll when drawer is open */
+body.drawer-open {
+  overflow: hidden;
+}
+
+@media (max-width: 599px) {
+  .side-drawer {
+    width: 260px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-nav-header {
+    padding: 0 0.5rem;
+  }
+  
+  .side-drawer {
+    width: 240px;
+  }
+}

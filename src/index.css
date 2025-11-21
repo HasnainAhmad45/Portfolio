@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: #00bfbf;
+  color: #fafafa;
+  text-shadow: none;
+}
+
+::selection {
+  background: #00bfbf;
+  color: #fafafa;
+  text-shadow: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  font-size: clamp(14px, 1.5vw, 16px);
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: all 0.5s ease;
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+h5 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: clamp(13px, 1.5vw, 14px);
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: clamp(12px, 1.5vw, 13px);
+  }
+  
+  body {
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "basics": {
+    "name": "Hasnain Ahmad",
+    "label": "Software Engineer",
+    "email": "hasnainirshad44@gmail.com",
+    "phone": "+92 3097977417",
+    "url": "",
+    "summary": "I'm Hasnain Ahmad, a 4th-semester Computer Science student at FCIT (Old Campus), passionate about Python development. I'm currently exploring Django and Flask, while building a strong foundation in HTML, CSS, and JavaScript. I love solving problems and aim to grow through real-world projects and meaningful tech connections.",
+    "description": "Software Engineer specializing in Python and Web Development",
+    "keywords": "Python, JavaScript, React, Web Development, Software Engineer",
+    "location": {
+      "address": "Khalid bin Walid hall PU Old Camps Lahore",
+      "postalCode": "",
+      "city": "Lahore",
+      "countryCode": "PK",
+      "country": "Pakistan",
+      "region": "Punjab"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "yourusername",
+        "url": "https://github.com/yourusername",
+        "x_icon": "fab fa-github"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "Hasnain Ahmad",
+        "url": "https://www.linkedin.com/in/hasnain-ahmad-52a370281/",
+        "x_icon": "fab fa-linkedin"
+      },
+      {
+        "network": "Twitter",
+        "username": "yourusername",
+        "url": "https://twitter.com/yourusername",
+        "x_icon": "fab fa-twitter"
+      },
+      {
+        "network": "Email",
+        "username": "hasnainirshad44@gmail.com",
+        "url": "mailto:hasnainirshad44@gmail.com",
+        "x_icon": "fas fa-envelope"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Mavericks United",
+      "position": "Business Development Automation",
+      "url": "",
+      "startDate": "2025-05-19",
+      "endDate": "2025-07-19",
+      "summary": "",
+      "highlights": [
+        "Developed and deployed web scraping scripts to automate data collection for business development pipelines",
+        "Utilized tools like Selenium, BeautifulSoup, and undetected-chromedriver to extract structured data from dynamic websites",
+        "Built and maintained data pipelines feeding lead generation and market analysis tools",
+        "Ensured scraper reliability by handling dynamic content, pop-ups, delays, and anti-bot mechanisms",
+        "Collaborated with the BD team to understand lead qualification criteria and integrated filters accordingly"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Punjab University Lahore PUCIT",
+      "url": "",
+      "area": "Computer Science",
+      "studyType": "BS",
+      "startDate": "2023",
+      "endDate": "Present",
+      "score": ""
+    },
+    {
+      "institution": "Punjab Group of Colleges Malisi",
+      "url": "",
+      "area": "FSC",
+      "studyType": "Intermediate",
+      "startDate": "2020",
+      "endDate": "2022",
+      "score": ""
+    },
+    {
+      "institution": "Hawks Pre Cadet School System Malisi",
+      "url": "",
+      "area": "Matriculation",
+      "studyType": "Matric",
+      "startDate": "2018",
+      "endDate": "2020",
+      "score": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend Development",
+      "level": "",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "level": "Beginner",
+      "keywords": [
+        "Python",
+        "Django",
+        "Flask"
+      ]
+    },
+    {
+      "name": "Database",
+      "level": "",
+      "keywords": [
+        "SQL"
+      ]
+    },
+    {
+      "name": "Web Scraping",
+      "level": "",
+      "keywords": [
+        "Selenium",
+        "BeautifulSoup",
+        "undetected-chromedriver"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Web Development Projects",
+      "description": "Various web development projects",
+      "highlights": [
+        "Weather forecast",
+        "Calculator",
+        "Youtube Clone",
+        "Doodler Jump",
+        "Flappy Bird",
+        "Tic Tac Toe",
+        "Whack a Mole"
+      ],
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "name": "Social Media Handler",
+      "description": "OOP Project",
+      "highlights": [],
+      "keywords": [
+        "Python",
+        "OOP"
+      ]
+    },
+    {
+      "name": "Car Showroom Management System",
+      "description": "Database Project",
+      "highlights": [],
+      "keywords": [
+        "SQL",
+        "Database"
+      ]
+    },
+    {
+      "name": "Hotel Management System",
+      "description": "Database Project",
+      "highlights": [],
+      "keywords": [
+        "SQL",
+        "Database"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ]
+}

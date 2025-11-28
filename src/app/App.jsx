@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { HelmetMeta } from "./HelmetMeta";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
-import { CssBaseline } from "@mui/material"; // <-- updated
+import { CssBaseline } from "@mui/material";
 import { logCredits } from "../utils/logCredits";
 
 import { Home } from "../pages/Home";
@@ -12,21 +12,21 @@ import { Resume } from "../pages/Resume";
 import { PageNotFound } from "../pages/PageNotFound";
 
 export const App = () => {
-    logCredits();
+  logCredits();
 
-    return (
-      <ThemeProvider>
-        <CssBaseline />
-        <Router>
-          <HelmetMeta />
-          <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/resume" component={Resume} />
-              <Route path="*" component={PageNotFound} />
-          </Switch>
-        </Router>
-      </ThemeProvider>
-    );
+  return (
+    <ThemeProvider>
+      <CssBaseline />
+      <Router>
+        <HelmetMeta />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/projects" exact component={Projects} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/resume" component={Resume} />
+          <Route path="*" component={PageNotFound} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  );
 };

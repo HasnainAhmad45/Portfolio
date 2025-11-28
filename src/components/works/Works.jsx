@@ -106,6 +106,7 @@ export const Works = () => {
     { key: "oop", label: "OOP Projects" },
     { key: "database", label: "Database Projects" },
     { key: "ai", label: "AI/ML Projects" },
+    { key: "web-scraping", label: "Web Scraping" },
   ];
 
   const [projects] = useState([
@@ -193,8 +194,8 @@ export const Works = () => {
         "Clean and intuitive UI",
         "Cross-browser compatibility",
       ],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://currencyconverterini.netlify.app/",
+      githubUrl: "https://github.com/HasnainAhmad45/CurrencyConverter",
       category: "web",
     },
     {
@@ -217,7 +218,7 @@ export const Works = () => {
         "Responsive keyboard and touch controls",
         "Game state management",
       ],
-      liveUrl: "https://flappybirdinit.netlify.app/",
+      liveUrl: "https://flappybirdini.netlify.app/",
       githubUrl: "https://github.com/HasnainAhmad45/Flappy-Bird",
       category: "web",
     },
@@ -242,7 +243,7 @@ export const Works = () => {
         "Score tracking and timing system",
         "Responsive grid layout",
       ],
-      liveUrl: "https://whackamoleinit.netlify.app/",
+      liveUrl: "https://whackamoleini.netlify.app/",
       githubUrl: "https://github.com/HasnainAhmad45/Whack-a-Mole",
       category: "web",
     },
@@ -262,7 +263,7 @@ export const Works = () => {
         "Responsive grid design",
         "Game reset and replay functionality",
       ],
-      liveUrl: "https://tictactoeinit.netlify.app/",
+      liveUrl: "https://tictactoeini.netlify.app/",
       githubUrl: "https://github.com/HasnainAhmad45/Tic-Tac-Toe",
       category: "web",
     },
@@ -286,7 +287,7 @@ export const Works = () => {
         "Power-up and obstacle system",
         "Smooth character animation",
       ],
-      liveUrl: "https://doodlerjumpinit.netlify.app/",
+      liveUrl: "https://doodlerjumpini.netlify.app/",
       githubUrl: "https://github.com/HasnainAhmad45/Doodler-Jump",
       category: "web",
     },
@@ -312,7 +313,7 @@ export const Works = () => {
         "Channel pages",
         "Mobile-responsive design",
       ],
-      liveUrl: "https://ytcloneinit.netlify.app/",
+      liveUrl: "https://youtubecloneini.netlify.app/",
       githubUrl: "https://github.com/HasnainAhmad45/YouTube-Clone",
       category: "web",
     },
@@ -337,7 +338,7 @@ export const Works = () => {
         "Error handling and validation",
         "Responsive design",
       ],
-      liveUrl: "https://scientificcalculatorinit.netlify.app/",
+      liveUrl: "https://scientificcalculatorini.netlify.app/",
       githubUrl: "https://github.com/HasnainAhmad45/Scientific-Calculator",
       category: "web",
     },
@@ -362,7 +363,7 @@ export const Works = () => {
         "Responsive design",
         "Error handling for API failures",
       ],
-      liveUrl: "https://weatherappinit.netlify.app/",
+      liveUrl: "https://weatherappini.netlify.app/",
       githubUrl: "https://github.com/HasnainAhmad45/Weather-App",
       category: "web",
     },
@@ -389,12 +390,12 @@ export const Works = () => {
         "News feed generation",
         "Memory management and optimization",
       ],
-      liveUrl: "#",
+      liveUrl: "https://projectvideosini.netlify.app/projects/cpp",
       githubUrl: "https://github.com/HasnainAhmad45/Social-Media-Handler",
       category: "oop",
     },
     {
-      id: 13,
+      id: 12,
       title: "Hotel Management System",
       description: `A comprehensive desktop application for hotel operations management built with Python Tkinter. Features room booking, guest management with an intuitive graphical user interface.`,
       alter: "Hotel Management System",
@@ -406,12 +407,12 @@ export const Works = () => {
         "Inventory and supplies tracking",
         "Database integration with Mysql",
       ],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://projectvideosini.netlify.app/projects/hms",
+      githubUrl: "https://github.com/HasnainAhmad45/Hotel-Management-System",
       category: "database",
     },
     {
-      id: 14,
+      id: 13,
       title: "Car Showroom Management System",
       description: `A database-driven car showroom management system built with MySQL. Manages vehicle inventory, customer relationships, sales transactions, and supplier information with complex queries and reporting capabilities.`,
       alter: "Car Showroom System",
@@ -432,19 +433,30 @@ export const Works = () => {
         "Stored procedures and functions",
         "Data integrity and constraints",
       ],
-      liveUrl: "#",
+      liveUrl: "https://projectvideosini.netlify.app/projects/cms",
       githubUrl: "https://github.com/HasnainAhmad45/Car-Showroom-Management-System",
       category: "database",
     },
     {
-      id: 32,
+      id: 14,
+      title: "Made in China Scraper",
+      description: `A web scraper that extracts product listings, prices, and supplier information from the Made-in-China website for data analysis and lead generation.`,
+      alter: "Made in China Scraper",
+      image: `${Startup}`,
+      technologies: ["Python", "BeautifulSoup", "Selenium", "MySQL"],
+      liveUrl: "https://projectvideosini.netlify.app/projects/mic",
+      githubUrl: "https://github.com/HasnainAhmad45/Made-in-China-Scraper",
+      category: "web-scraping",
+    },
+    {
+      id: 15,
       title: "AI Chatbot",
       description: `Intelligent chatbot using natural language processing for customer service automation.`,
       alter: "AI Chatbot",
-      image: `${Startup}`, // You can replace with actual image
+      image: `${Startup}`,
       technologies: ["Python", "NLP", "Machine Learning"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "",
+      githubUrl: "",
       category: "ai",
     },
   ]);
@@ -500,7 +512,7 @@ export const Works = () => {
                 <img src={project.image} alt={project.alter} />
               </div>
               <div className="project-content__wrapper">
-                <div className="project-category" style={{color: theme.palette.primary.main}}>
+                <div className="project-category" style={{ color: theme.palette.primary.main }}>
                   {projectCategories.find((cat) => cat.key === project.category)?.label}
                 </div>
                 <h3 className="project-title" style={projectTitleStyle}>{project.title}</h3>

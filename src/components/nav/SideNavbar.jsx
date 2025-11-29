@@ -60,14 +60,11 @@ export const SideNavbar = () => {
                   <Typography>{link.label}</Typography>
                 </Link>
               ))}
-              <a
-                href="/resume"
-                rel="noopener noreferrer"
-                className="nav-link"
-              >
+              <Link to="/resume" className="nav-link">
                 <DescriptionIcon sx={{ mr: 1, fontSize: 20 }} />
                 <Typography>Resume</Typography>
-              </a>
+              </Link>
+
             </div>
           )}
         </div>
@@ -113,16 +110,10 @@ export const SideNavbar = () => {
                   <Typography fontWeight={600}>{link.label}</Typography>
                 </Link>
               ))}
-              <a
-                href="/resume"
-                rel="noopener noreferrer"
-                className="drawer-link"
-                onClick={closeMenu}
-                style={{ color: isDark ? theme.palette.text.primary : '#575757' }}
-              >
+              <Link to="/resume" className="drawer-link" onClick={closeMenu}>
                 <DescriptionIcon sx={{ mr: 1, fontSize: 20 }} />
                 <Typography fontWeight={600}>Resume</Typography>
-              </a>
+              </Link>
             </div>
           </div>
         </>

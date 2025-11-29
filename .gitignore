@@ -1,4 +1,3 @@
-
 # dependencies
 /node_modules
 /.pnp
@@ -23,6 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# env files
 .env
 
+# lock files
 package-lock.json
+yarn.lock

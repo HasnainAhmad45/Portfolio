@@ -178,7 +178,7 @@ export const Works = () => {
         "Smooth CSS animations",
         "Project showcase with filtering",
       ],
-      liveUrl: "",
+      liveUrl: "https://portfolioini.netlify.app/",
       githubUrl: "https://github.com/HasnainAhmad45/Portfolio",
       category: "web",
     },

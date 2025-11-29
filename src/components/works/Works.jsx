@@ -5,9 +5,21 @@ import { TextDecrypt } from "../content/TextDecrypt";
 import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import "./Works.css";
-// Import project images
-import Portfolio from '../../assets/recentprojects/react-portfolio.png';
-import Startup from '../../assets/recentprojects/startup.png';
+import blog from '../../assets/recentprojects/blog.png';
+import flappy from '../../assets/recentprojects/flappy.png';
+import mole from '../../assets/recentprojects/mole.png';
+import tic from '../../assets/recentprojects/tic.png';
+import doodler from '../../assets/recentprojects/doodler.png';
+import yt from '../../assets/recentprojects/yt.png';
+import calculator from '../../assets/recentprojects/cal.png';
+import weather from '../../assets/recentprojects/weather.png';
+import cc from '../../assets/recentprojects/cc.png';
+import portfolio from '../../assets/recentprojects/port.png';
+import general from '../../assets/recentprojects/general.png';
+import cpp from '../../assets/recentprojects/cpp.png';
+import cms from '../../assets/recentprojects/cms.png';
+import hms from '../../assets/recentprojects/hms.png';
+import mic from '../../assets/recentprojects/mic.png';
 import { useTheme } from '@mui/material/styles';
 import { alpha } from '@mui/material/styles';
 
@@ -115,7 +127,7 @@ export const Works = () => {
       title: "Modern Blogging Platform",
       description: `A comprehensive full-stack blogging application featuring user authentication, CRUD operations for blog posts, image upload functionality with Cloudinary storage, and responsive Material-UI design. Built with React frontend, Express.js REST API backend, and MySQL database with proper file handling using Multer middleware.`,
       alter: "Blogging Platform",
-      image: `${Portfolio}`,
+      image: `${blog}`,
       technologies: [
         "React",
         "Express.js",
@@ -137,8 +149,8 @@ export const Works = () => {
         "RESTful API architecture",
         "File upload handling with Multer",
       ],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "",
+      githubUrl: "https://github.com/HasnainAhmad45/Blogging-Website",
       category: "web",
     },
     {
@@ -146,7 +158,7 @@ export const Works = () => {
       title: "Portfolio",
       description: `A hybrid portfolio website featured by both traditional HTML/CSS/JavaScript implementation and a modern React version with Material-UI components. Includes an Express.js backend for contact forms and project management with responsive design and smooth animations.`,
       alter: "Portfolio",
-      image: `${Portfolio}`,
+      image: `${portfolio}`,
       technologies: [
         "HTML5",
         "CSS3",
@@ -166,8 +178,8 @@ export const Works = () => {
         "Smooth CSS animations",
         "Project showcase with filtering",
       ],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "",
+      githubUrl: "https://github.com/HasnainAhmad45/Portfolio",
       category: "web",
     },
     {
@@ -175,7 +187,7 @@ export const Works = () => {
       title: "Currency Converter",
       description: `A real-time currency conversion application that fetches live exchange rates from external APIs. Features a clean, intuitive interface with support for multiple currencies, historical data, and responsive design for seamless cross-device usage.`,
       alter: "Currency Converter",
-      image: `${Portfolio}`,
+      image: `${cc}`,
       technologies: [
         "React",
         "JavaScript",
@@ -203,7 +215,7 @@ export const Works = () => {
       title: "Flappy Bird Game",
       description: `A JavaScript implementation of the classic Flappy Bird game using HTML5 Canvas. Features smooth character animation, collision detection, score tracking, and responsive controls with increasing difficulty levels.`,
       alter: "Flappy Bird Game",
-      image: `${Portfolio}`,
+      image: `${flappy}`,
       technologies: [
         "HTML5 Canvas",
         "JavaScript",
@@ -227,7 +239,7 @@ export const Works = () => {
       title: "Whack a Mole Game",
       description: `An interactive Whack-a-Mole arcade game built with vanilla JavaScript. Features random mole appearances, timing mechanics, score system, and progressively challenging levels with visual feedback.`,
       alter: "Whack a Mole Game",
-      image: `${Portfolio}`,
+      image: `${mole}`,
       technologies: [
         "JavaScript",
         "HTML5",
@@ -253,7 +265,7 @@ export const Works = () => {
       title: "Tic Tac Toe Game",
       description: `A feature-rich Tic Tac Toe game with both player vs player. Includes game statistics, and sleek animations with win detection logic.`,
       alter: "Tic Tac Toe Game",
-      image: `${Portfolio}`,
+      image: `${tic}`,
       technologies: ["JavaScript", "HTML5", "CSS3", "Game Logic"],
       features: [
         "Player vs Player mode",
@@ -272,7 +284,7 @@ export const Works = () => {
       title: "Doodler Jump Game",
       description: `A Doodle Jump clone built with HTML5 Canvas featuring character physics, platform generation, gravity simulation, and progressive score track. Includes obstacle mechanics.`,
       alter: "Doodler Jump Game",
-      image: `${Portfolio}`,
+      image: `${doodler}`,
       technologies: [
         "HTML5 Canvas",
         "JavaScript",
@@ -296,7 +308,7 @@ export const Works = () => {
       title: "YouTube Clone",
       description: `A fully responsive YouTube interface clone with video playback, search functionality, and channel simulation. Features a modern UI with sidebar navigation, video grid layout, and mock video data with interactive elements.`,
       alter: "YouTube Clone",
-      image: `${Portfolio}`,
+      image: `${yt}`,
       technologies: [
         "HTML5",
         "CSS3",
@@ -322,7 +334,7 @@ export const Works = () => {
       title: "Advanced Calculator",
       description: `A feature-rich calculator application with basic and scientific functions. Includes memory operations, keyboard support, and a sleek, responsive interface with error handling.`,
       alter: "Calculator App",
-      image: `${Portfolio}`,
+      image: `${calculator}`,
       technologies: [
         "JavaScript",
         "HTML5",
@@ -347,7 +359,7 @@ export const Works = () => {
       title: "Weather Forecast App",
       description: `A real-time weather application that fetches current conditions and forecasts from weather APIs. Features location detection, and detailed weather information with icons.`,
       alter: "Weather App",
-      image: `${Portfolio}`,
+      image: `${weather}`,
       technologies: [
         "JavaScript",
         "API Integration",
@@ -372,7 +384,7 @@ export const Works = () => {
       title: "Social Media Handler (C++)",
       description: `An object-oriented social media management system built in C++ with comprehensive file handling. Implements user profiles, friend connections, post management, and data persistence using file operations with efficient memory management.`,
       alter: "Social Media Handler",
-      image: `${Portfolio}`,
+      image: `${cpp}`,
       technologies: [
         "C++",
         "Object-Oriented Programming",
@@ -399,7 +411,7 @@ export const Works = () => {
       title: "Hotel Management System",
       description: `A comprehensive desktop application for hotel operations management built with Python Tkinter. Features room booking, guest management with an intuitive graphical user interface.`,
       alter: "Hotel Management System",
-      image: `${Portfolio}`,
+      image: `${hms}`,
       technologies: ["Python", "Tkinter", "MySQL", "GUI Development"],
       features: [
         "Room reservation and booking system",
@@ -416,7 +428,7 @@ export const Works = () => {
       title: "Car Showroom Management System",
       description: `A database-driven car showroom management system built with MySQL. Manages vehicle inventory, customer relationships, sales transactions, and supplier information with complex queries and reporting capabilities.`,
       alter: "Car Showroom System",
-      image: `${Portfolio}`,
+      image: `${cms}`,
       technologies: [
         "MySQL",
         "Database Design",
@@ -442,7 +454,7 @@ export const Works = () => {
       title: "Made in China Scraper",
       description: `A web scraper that extracts product listings, prices, and supplier information from the Made-in-China website for data analysis and lead generation.`,
       alter: "Made in China Scraper",
-      image: `${Startup}`,
+      image: `${mic}`,
       technologies: ["Python", "BeautifulSoup", "Selenium", "MySQL"],
       liveUrl: "https://projectvideosini.netlify.app/projects/mic",
       githubUrl: "https://github.com/HasnainAhmad45/Made-in-China-Scraper",
@@ -453,7 +465,7 @@ export const Works = () => {
       title: "AI Chatbot",
       description: `Intelligent chatbot using natural language processing for customer service automation.`,
       alter: "AI Chatbot",
-      image: `${Startup}`,
+      image: `${general}`,
       technologies: ["Python", "NLP", "Machine Learning"],
       liveUrl: "",
       githubUrl: "",

@@ -544,7 +544,7 @@ export const Works = () => {
                     variant="contained"
                     size="small"
                   >
-                    {project.category === 'ai' || project.category === 'database'
+                    {project.category === 'ai' || project.category === 'database' || project.category === 'web-scraping' || project.category === 'oop'
                       ? 'View Demo'
                       : 'Live Demo'}
                   </LiveDemo>

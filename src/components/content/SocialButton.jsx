@@ -29,8 +29,10 @@ const StyledIconButton = styled(IconButton)(({ theme, open }) => ({
 
   ...(open && {
     background: 'rgba(236,112,76,0.2)',
-    '& .MuiSvgIcon-root': { color: '#ec704c' },
-    transform: 'translateY(-50%) rotate(45deg)', // rotate but stay centered
+    '& .MuiSvgIcon-root': {
+      color: '#ec704c',
+      transform: 'rotate(45deg)',
+    },
   }),
 
   '&:hover': {
@@ -48,8 +50,17 @@ const StyledIconButton = styled(IconButton)(({ theme, open }) => ({
     height: '2.2rem',
     width: '2.2rem',
     padding: '0.4rem',
-  }
+  },
 }));
+
+// Update iconStyle to include smooth rotation
+const iconStyle = {
+  fontSize: '1.9rem',
+  color: '#575757',
+  transition: 'transform 0.25s ease, color 0.25s ease',
+  transform: open ? 'rotate(45deg)' : 'rotate(0deg)',
+};
+
 
 const StyledPopover = styled(Popover)(({ theme }) => ({
   marginTop: theme.spacing(0.5),
@@ -138,6 +149,7 @@ export const SocialButton = () => {
         <StyledIconButton onClick={handleClick} open={open}>
           <AddIcon sx={iconStyle} />
         </StyledIconButton>
+
       </Tooltip>
 
       <StyledPopover

@@ -6,12 +6,9 @@
   height: 60px;
   background: inherit;
   backdrop-filter: blur(10px);
-  z-index: 100; /* Reduced from 1000 to 100 */
+  z-index: 100; 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-
-/* ... rest of your SideNavbar.css remains the same ... */
-
 .nav-container {
   width: 100%;
   height: 100%;
@@ -22,13 +19,13 @@
   margin: 0;
 }
 
-/* Mobile header styles */
 .mobile-nav-header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 1rem;
+  margin-left: 10px;
   height: 100%;
 }
 

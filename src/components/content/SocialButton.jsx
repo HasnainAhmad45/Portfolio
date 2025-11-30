@@ -8,7 +8,7 @@ import { alpha } from '@mui/material/styles';
 
 const SocialButtonWrapper = styled('div')(({ theme }) => ({
   position: 'fixed',
-  top: theme.spacing(2),
+  top: theme.spacing(1.5),
   right: theme.spacing(2.5),
   zIndex: 101,
 }));

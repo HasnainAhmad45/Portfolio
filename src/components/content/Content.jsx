@@ -6,26 +6,19 @@ import Resume from "../../settings/resume.json";
 import { FirstName, LastName } from "../../utils/getName";
 
 const MainContainer = styled(Container)(({ theme }) => ({
-  minHeight: "60vh",
+  marginTop: "100px",
+  fontFamily: '"Roboto Mono", monospace',
+  minHeight: "auto", // remove fixed minHeight
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   width: "100vw",
-  paddingTop: theme.spacing(5),
-  paddingBottom: theme.spacing(5),
+  paddingTop: "20px", // only 20px
+  paddingBottom: "40px", // only 20px
   boxSizing: "border-box",
-  [theme.breakpoints.down('sm')]: {
-    minHeight: "50vh",
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-  },
-  [theme.breakpoints.down('xs')]: {
-    minHeight: "45vh",
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-  },
 }));
+
 
 const HeadingWrapper = styled('div')(({ theme }) => ({
   display: "flex",
@@ -64,6 +57,8 @@ const NameTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const JobsTypography = styled(Typography)(({ theme }) => ({
+  fontFamily: '"Roboto Mono", monospace',
+  letterSpacing: "3px",
   textAlign: "center",
   fontWeight: 700,
   fontSize: "4rem",
@@ -95,9 +90,8 @@ export const Content = () => {
         </NameTypography>
         <JobsTypography variant="h1" component="h1">
           <TextDecrypt
-            text={`${Resume.basics?.job1 || "Software Engineer"} + `}
+            text={`${Resume.basics?.job1 || "Software Engineer"}`}
           />
-          <TextDecrypt text={`${Resume.basics?.job2 || "Web Developer"}`} />
         </JobsTypography>
       </HeadingWrapper>
     </MainContainer>

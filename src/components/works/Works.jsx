@@ -25,18 +25,22 @@ import { alpha } from '@mui/material/styles';
 
 const MainSection = styled(Container)(({ theme }) => ({
   maxWidth: '100vw',
+  fontFamily: '"Roboto Mono", monospace',
   marginTop: '1em',
   marginBottom: 'auto',
   padding: theme.spacing(4, 2),
 }));
 const SectionHeader = styled('div')({
   textAlign: 'center',
+  fontFamily: '"Roboto Mono", monospace',
 });
 const SectionTitle = styled('h1')(({ theme }) => ({
   fontSize: '2.5rem',
   fontWeight: 600,
   marginBottom: theme.spacing(5),
   color: '#2c3e50',
+  fontFamily: '"Roboto Mono", monospace',
+
 }));
 const SectionSubtitle = styled('p')(({ theme }) => ({
   fontSize: '1.1rem',
@@ -44,13 +48,16 @@ const SectionSubtitle = styled('p')(({ theme }) => ({
   maxWidth: 600,
   margin: '0 auto',
   marginBottom: theme.spacing(5),
+  fontFamily: '"Roboto Mono", monospace',
 }));
+
 const Filters = styled('div')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   flexWrap: 'wrap',
   gap: theme.spacing(1),
   marginBottom: theme.spacing(4),
+  fontFamily: '"Roboto Mono", monospace',
 }));
 const ButtonStyled = styled(Button)(({ theme }) => ({
   borderRadius: 6,
@@ -59,17 +66,20 @@ const ButtonStyled = styled(Button)(({ theme }) => ({
   fontSize: '0.9rem',
   transition: 'all 0.2s ease',
   margin: theme.spacing(0.5),
+  fontFamily: '"Roboto Mono", monospace',
 }));
 const LiveDemo = styled(ButtonStyled)(({ theme }) => ({
   backgroundColor: '#575757',
   color: 'white',
   '&:hover': { backgroundColor: '#ec704c' },
+  fontFamily: '"Roboto Mono", monospace',
 }));
 const GithubButton = styled(ButtonStyled)(({ theme }) => ({
   backgroundColor: 'transparent',
   color: '#575757',
   border: '1px solid #e0e0e0',
   '&:hover': { backgroundColor: '#f5f5f5', borderColor: '#575757' },
+  fontFamily: '"Roboto Mono", monospace',
 }));
 
 export const Works = () => {
@@ -92,6 +102,7 @@ export const Works = () => {
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
+    fontFamily: '"Roboto Mono", monospace',
     height: '100%',
   };
   const projectTitleStyle = {

@@ -9,7 +9,7 @@ import { SocialButton } from "../components/content/SocialButton";
 
 export const Resume = () => {
   const handleView = () => {
-    window.open('/Hasnain_Ahmad_Resume.pdf', '_blank');
+    window.open('/Hasnain_Ahmad_Resume.pdf#toolbar=1&navpanes=1&scrollbar=1', '_blank');
   };
 
   const handleDownload = () => {

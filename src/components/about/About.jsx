@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import { TextDecrypt } from "../content/TextDecrypt";
 import { FirstName, LastName } from "../../utils/getName";
 import './About.css';
-
+import { Link } from "react-router-dom";
 import profile from '../../assets/profile.png';
 
 const MainContainer = styled(Container)(({ theme }) => ({
@@ -31,9 +31,9 @@ export const About = () => {
     <section id="about">
       <MainContainer component="main" maxWidth={false}>
         <div className="about">
-          <div 
+          <div
             className="_img"
-            style={{ 
+            style={{
               backgroundImage: `url(${profile})`,
             }}
           >
@@ -45,10 +45,10 @@ export const About = () => {
             <p className="aboutme">
               {aboutme}
             </p>
-            <a href="/contact" className="contact-btn">
+            <Link to="/contact" className="contact-btn">
               <i className="fas fa-terminal"></i>
               <Typography component='span'> Send me a message.</Typography>
-            </a>
+            </Link>
           </div>
         </div>
       </MainContainer>
